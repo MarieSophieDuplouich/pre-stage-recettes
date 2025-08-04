@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once  "/crud/crud-recettes.php";
+require_once  "/crud/crud-user.php";
 $recipes = getAllRecipes();
 ?>
 <!DOCTYPE html>
