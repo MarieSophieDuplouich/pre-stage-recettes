@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once  "./crud/crud-recettes.php";
 require_once  "./crud/crud-user.php";
 $recipes = getAllRecipes();
@@ -20,8 +21,10 @@ $recipes = getAllRecipes();
         <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
+<<<<< 4-accueil-index-luz
             <li><a href="./crud/recette-detailled.php"></a>Create or Edit Recipe </li>
             <li><a href="./login-logout/login.php"></a>Log Out</li>
+
         </ul>
         </nav>
     </header>
