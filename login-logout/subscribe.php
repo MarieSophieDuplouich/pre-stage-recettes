@@ -1,4 +1,15 @@
 <?php
+
+require_once("/crud/crud-user");
+
+if(isset($_POST["username"]) && isset($_POST["password"])){
+    $user = $_POST["username"];
+    $password = $_POST["password"];
+    singUp($user,$password);
+    header("location:/login-logout/login.php");
+}else{
+    header("location::/login-logout/subscribe.php");
+}
 ?>
 
 
@@ -14,7 +25,7 @@
 </head>
 <body>
   <div>
-        <form action="crud-user.php" method="post">
+        <form action="" method="post">
             <label for=""></label><br>
             <input type="text" name="username" id="username">
             <label for="password"></label><br>
