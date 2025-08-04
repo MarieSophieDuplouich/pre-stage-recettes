@@ -9,9 +9,7 @@
 body {
     font-family: JejuGothic, sans-serif;
     background-color: #009577;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
  h1,
@@ -40,3 +38,22 @@ button {
    background-color: #fff;
    color: #cf5d49;
  }
+
+ul{
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  list-style: none;
+  text-decoration: underline;
+}
+.container{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-recipes{
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
