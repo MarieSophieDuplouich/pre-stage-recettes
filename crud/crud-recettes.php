@@ -111,8 +111,8 @@ $recipess = getAllRecipes();
 
 
     </ul>
-<!--    Luz et ravier doivent relier le bon chemin du login logout et j'ai respesté leur bdd" -->
-
+<!-- Luz et ravier doivent relier le bon chemin du login logout et j'ai respesté leur bdd" AHHHH-->
+   
 </body>
 </html>
 
