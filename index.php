@@ -1,6 +1,6 @@
 <?php
 session_start();
-//$recipes = getAllRecipes();
+$recipes = getAllRecipes();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ session_start();
         <h1>Available recipes</h1>
         <div class="container-recipes">
             <?php foreach ($recipe as $recipe): ?>
-            <h2> <?= $recipe['title'] ?></h2>
+            <h2> sdfdqs <?= $recipe['title'] ?></h2>
             <?php endforeach; ?>
             <a href="recette-detailed.php">See more details</a>
         </div>
