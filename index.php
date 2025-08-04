@@ -1,8 +1,9 @@
 <?php
 session_start();
-$recipes = getAllRecipes();
 require_once "../pre-stage-recettes/crud/crud-user.php";
-require_once "../pre-stage-recettes/crud/crud-recettes.php";
+require_once "./crud/bdd-crud-recettes.php";
+require_once "./crud/crud-recettes.php";
+$recipes = getAllRecipes();
 ?>
 <!DOCTYPE html>
 <html lang="en">
