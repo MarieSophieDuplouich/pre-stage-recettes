@@ -1,9 +1,10 @@
 <?php
 session_start();
-require_once "../pre-stage-recettes/crud/crud-user.php";
-require_once "./crud/bdd-crud-recettes.php";
-require_once "./crud/crud-recettes.php";
+
+require_once  "./crud/crud-recettes.php";
+require_once  "./crud/crud-user.php";
 $recipes = getAllRecipes();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +21,10 @@ $recipes = getAllRecipes();
         <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="modification.php"></a>Create or Edit Recipe </li>
-            <li><a href="logout.php"></a>Log Out</li>
+<<<<< 4-accueil-index-luz
+            <li><a href="./crud/recette-detailled.php"></a>Create or Edit Recipe </li>
+            <li><a href="./login-logout/login.php"></a>Log Out</li>
+
         </ul>
         </nav>
     </header>

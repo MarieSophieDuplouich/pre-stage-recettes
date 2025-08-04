@@ -3,10 +3,6 @@ require_once "bdd-crud-recettes.php";
 ?>
 <?php
 // Test auth
-if (isset($_SESSION["id_user"]) == false) {
-    header("Location: login.php");
-    exit();
-}
 
 // Ajout d'une recette via le formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -39,7 +35,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // $recipess = trouver_recipe_par_id_user($_SESSION['id_user']); // c'est ça le read 
 $recipess = getAllRecipes();
 
-
-?>
 
 
