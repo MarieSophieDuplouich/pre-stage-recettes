@@ -110,10 +110,9 @@ $recipess = getAllRecipes();
         </table>
 
 
-
     </ul>
+<!--    Luz et ravier doivent relier le bon chemin du login logout et j'ai respesté leur bdd" -->
 
-   
 </body>
 </html>
 
