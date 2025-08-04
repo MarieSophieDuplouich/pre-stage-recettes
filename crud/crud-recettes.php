@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-$recipess = trouver_recipe_par_id_user($_SESSION['id_user']); // c'est ça le read 
+// $recipess = trouver_recipe_par_id_user($_SESSION['id_user']); // c'est ça le read 
+$recipess = getAllRecipes();
 
 
 ?>
@@ -52,7 +53,65 @@ $recipess = trouver_recipe_par_id_user($_SESSION['id_user']); // c'est ça le re
 <body>
 <!-- //luz a mis get all recipes getAllRecipes(); -->
     <h1>crud-recettes</h1>
+  <!-- Navigation ne pas oublier le ! avant isset pour prouver l'inverse "ne pas" Si l'user_id n'est pas connecté il doit se connecter sinon il doit se déconnecter -->
+    <header>
+        <nav>
+            <?php if (!isset($_SESSION["id_user"])): ?>
+                <a href="login.php">Se connecter</a>
+                <!-- //quand il n'est pas connecté -->
+            <?php else: ?>
+                <a href="logout.php">Se déconnecter</a>
+                <!-- //quand il est  connecté -->
+            <?php endif ?>
+        </nav>
+    </header>
 
+
+    <h2>Bienvenue <?= htmlspecialchars($_SESSION['title']) ?> sur la page d'administration</h2>
+
+    <!-- Formulaire pour ajouter une tâche en front-end -->
+    <form action="" method="POST">
+        <input type="text" name="title" placeholder="Nom de la tâche" required>
+        <input type="text" name="description" placeholder="description" required>
+        <button class="button" type="submit">Ajouter</button>
+
+    </form>
+    <!-- Liste des recettes ne pas oublier les formulaires pour soumettre supprimer etc... nos données une tâche en front-end -->
+    <h2>Liste des recettes</h2>
+    <ul>
+        <table>
+            <tr>
+                <th>Recettes</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            <?php foreach ($recipess as $recipes): ?>
+                <tr>
+                    <td><?= $recipes['title'] ?> </td>
+                    <td><?= $recipes['description'] ?> </td>
+                    <td>
+                        <!-- Formulaire pour supprimer une recette en front-end   -->
+                        <form action="" method="POST" style="display: inline;">
+                            <input type="hidden" name="id" value="<?= $recipes['id'] ?>">
+                            <button class="button" type="submit" value="<?= $recipes['id'] ?>">Supprimer</button>
+                        </form>
+                        <!-- Formulaire pour modifier (update mise à jour) une tâche en front-end -->
+
+                        <form action="" method="POST">
+                            <input type="hidden" name="id" value="<?= $recipes['id'] ?>" required>
+                            <input type="text" name="title" value="<?= $recipes['title'] ?>" required>
+                            <input type="text" name="description" value="<?= $recipes['description'] ?>" required>
+                            <button class="button" type="submit">Modifier</button>
+
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+
+
+
+    </ul>
 
    
 </body>
