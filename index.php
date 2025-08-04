@@ -1,22 +1,12 @@
-<?php
-require_once 'crud_recettes.php';
-$recipes = get_all_recipes();
-?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des recettes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <h1>Liste des recettes</h1>
-    <ul>
-    <?php foreach ($recipes as $recipe): ?>
-        <li><a href="recette-detailled.php?id=<?= htmlspecialchars($recipe['id']) ?>">
-            <?= htmlspecialchars($recipe['title']) ?>
-        </a></li>
-    <?php endforeach; ?>
-    </ul>
+    <h1>recettes</h1>
 </body>
 </html>
